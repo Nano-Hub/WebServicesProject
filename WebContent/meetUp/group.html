@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Meet-UP</title>
+<script type="text/javascript"
+	src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/group.js"></script>
+
+<!-- BOOTSTRAP STYLES-->
+<link href="assets/css/bootstrap.css" rel="stylesheet" />
+<!-- FONTAWESOME STYLES-->
+<link href="assets/css/font-awesome.css" rel="stylesheet" />
+<!--CUSTOM BASIC STYLES-->
+<link href="assets/css/basic.css" rel="stylesheet" />
+<!--CUSTOM MAIN STYLES-->
+<link href="assets/css/custom.css" rel="stylesheet" />
+<!-- GOOGLE FONTS-->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans'
+	rel='stylesheet' type='text/css' />
+</head>
+<body onload="instantiate(); instantiateGroup();">
+
+
+
+	<div id="wrapper">
+		<nav class="navbar navbar-default navbar-cls-top " role="navigation"
+			style="margin-bottom: 0">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".sidebar-collapse">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">MEET-UP</a>
+			</div>
+
+			<div class="header-right">
+
+				<a href="index.html" class="btn btn-danger" title="home">Home </a>
+
+			</div>
+		</nav>
+		<!-- /. NAV TOP  -->
+		<nav class="navbar-default navbar-side" role="navigation">
+			<div class="sidebar-collapse">
+				<ul class="nav" id="main-menu">
+					<li>
+						<div class="user-img-div">
+							<!-- <img src="assets/img/user.png" class="img-thumbnail" /> -->
+							<div class="inner-text" id="indexUser"></div>
+						</div>
+
+					</li>
+
+
+					<li><a class="active-menu" href="index.html"><i
+							class="fa fa-dashboard "></i>Your GROUPS</a></li>
+
+					<li><a href="createGroup.html"><i class="fa fa-square-o "></i>Create
+							new group</a></li>
+
+
+
+				</ul>
+
+			</div>
+
+		</nav>
+		<!-- /. NAV SIDE  -->
+		<div id="page-wrapper">
+			<div id="page-inner">
+				<div class="row">
+					<div class="col-md-10">
+						<h1 class="page-head-line" id="textGroupName">Nom du groupe</h1>
+					</div>
+					<div class="col-md-2">
+							<button type="submit" class="btn btn-info"
+								onclick="deleteGroup()" id="buttonGroupDelete" disabled=true
+								style="float: right;">Delete the group</button>
+					</div>
+					<br>
+					<div class="col-md-8">
+						 <input type="text" class="form-control page-subhead-line" placeholder="Your group description" id="textGroupDescription" />
+					</div>
+					<div class="col-md-3">
+							<button type="submit" class="btn btn-info" disabled=true onclick="changeDescription()" id="buttonGroupDescription" style="float: right;">Change the description</button>
+					</div>		
+					
+
+					</div>
+
+					
+			
+
+				<!--table -->
+
+
+
+				<div class="row">
+
+					<div class="col-md-10 col-sm-offset-1">
+
+						<h1>Members</h1>
+
+						<div class="table-responsive">
+							<table class="table table-striped table-bordered table-hover">
+								<thead>
+									<tr>
+										<th>First Name</th>
+										<th>Last Name</th>
+										<th>Biography</th>
+									</tr>
+								</thead>
+								<tbody id="tableBody">
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<!-- end table -->
+
+				<!-- /. ROW  -->
+
+				<div class="row">
+					<!-- /.REVIEWS &  SLIDESHOW  -->
+					<div class="col-md-10 col-sm-offset-1 ">
+
+						<h1>Comments</h1>
+
+						<div class="panel panel-default">
+							<div class="panel-heading">Recent comments</div>
+							<div class="panel-body" style="padding: 0px;">
+								<div class="chat-widget-main" id="chatMain">
+
+									<!--  CHAT -->
+
+								</div>
+							</div>
+
+							<hr />
+
+						</div>
+						<div class="panel-footer">
+							<div class="input-group">
+								<input type="text" class="form-control"
+									placeholder="Enter Message" id="inputComment" /> <span
+									class="input-group-btn">
+									<button class="btn btn-success" type="button"
+										onclick="addComment()">SEND</button>
+								</span>
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+				<!--/.Chat Panel End-->
+				<br>
+				<div class="row">
+					<!-- /.REVIEWS &  SLIDESHOW  -->
+					<div class="col-md-10 col-sm-offset-1 ">
+						<button type="submit" class="btn btn-info" onclick="leaveGroup()"  id="buttonLeave" style="float: right;">Leave the group</button>
+					</div>
+				</div>
+			</div>
+			<!-- /. PAGE INNER  -->
+		</div>
+		<!-- /. PAGE WRAPPER  -->
+	</div>
+	<!-- /. WRAPPER  -->
+
+	<div id="footer-sec">
+		&copy; 2016 Vanet-Alder | Design By : <a
+			href="http://www.binarytheme.com/" target="_blank">BinaryTheme.com</a>
+	</div>
+	<!-- /. FOOTER  -->
+	<!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+	<!-- JQUERY SCRIPTS -->
+	<script src="assets/js/jquery-1.10.2.js"></script>
+	<!-- BOOTSTRAP SCRIPTS -->
+	<script src="assets/js/bootstrap.js"></script>
+	<!-- METISMENU SCRIPTS -->
+	<script src="assets/js/jquery.metisMenu.js"></script>
+	<!-- CUSTOM SCRIPTS -->
+	<script src="assets/js/custom.js"></script>
+
+
+
+</body>
+</html>
